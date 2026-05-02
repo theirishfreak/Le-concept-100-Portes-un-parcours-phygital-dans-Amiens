@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0a0704" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>100 Portes — Foire d'Amiens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── SPLASH : ANIMATION OUVERTURE DE PORTE ── -->
+  <div id="splash">
+    <div class="splash-scene">
+      <div class="door-open">
+        <div class="door-wing left"></div>
+        <div class="door-wing right"></div>
+        <div class="door-light"></div>
+      </div>
+    </div>
+    <p class="splash-sub">Foire d'Amiens · 100<sup>e</sup> édition</p>
+  </div>
+
+  <!-- ── APPLICATION PRINCIPALE ── -->
+  <main id="app" class="hidden">
+
+    <!-- BARRE HAUTE -->
+    <header class="topbar">
+      <div class="topbar-brand">
+        <span class="brand-100">100</span>
+        <span class="brand-portes">PORTES</span>
+      </div>
+      <button class="btn-share" id="btnShare" aria-label="Partager cette porte">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/>
+          <circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- HÉRO : VISUEL DE PORTE + ANNÉE -->
+    <section class="hero">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="door-container" id="doorContainer">
+        <div class="door-frame-outer">
+          <div class="door-frame-inner">
+            <div class="door-archive-photo" id="archivePhoto">
+              <div class="photo-grain"></div>
+              <div class="photo-vignette"></div>
+              <div class="photo-color-layer" id="photoColorLayer"></div>
+            </div>
+          </div>
+          <div class="door-knob-wrap">
+            <div class="door-knob"></div>
+          </div>
+        </div>
+        <div class="door-number-tag">
+          <span class="door-tag-label">PORTE</span>
+          <span class="door-tag-num" id="doorTagNum">—</span>
+        </div>
+      </div>
+
+      <div class="hero-year" id="heroYear">—</div>
+      <div class="hero-scroll-cue">
+        <span>Découvrir</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- PANNEAU CONTENU -->
+    <article class="content-panel">
+
+      <!-- TITRE ÉVÉNEMENT -->
+      <div class="event-block">
+        <div class="event-year-line">
+          <div class="year-ornament"></div>
+          <span class="event-year-chip" id="eventYearChip">—</span>
+          <div class="year-ornament"></div>
+        </div>
+        <h1 class="event-title" id="eventTitle">—</h1>
+        <p class="event-desc" id="eventDesc">—</p>
+      </div>
+
+      <!-- SLOGAN -->
+      <div class="slogan-card">
+        <div class="slogan-deco">"</div>
+        <p class="slogan-text" id="sloganText">Et toi, tu fais quoi en 2026&nbsp;?</p>
+      </div>
+
+      <!-- TÉMOIGNAGE D'ÉPOQUE -->
+      <div class="testimonial-card" id="testimonialCard">
+        <div class="testimonial-stripe"></div>
+        <div class="testimonial-inner">
+          <p class="testimonial-quote" id="testimonialQuote">—</p>
+          <div class="testimonial-meta">
+            <span class="testimonial-name" id="testimonialName">—</span>
+            <span class="testimonial-role" id="testimonialRole">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPEL À L'ACTION AR -->
+      <div class="ar-block">
+        <div class="ar-header">
+          <div class="ar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/>
+              <rect x="7" y="7" width="10" height="10" rx="1"/>
+            </svg>
+          </div>
+          <div>
+            <p class="ar-title">Traversez la porte</p>
+            <p class="ar-subtitle">Expérience en réalité augmentée</p>
+          </div>
+        </div>
+        <div class="ar-buttons">
+          <a class="ar-btn ar-snap" id="btnSnap" href="#" target="_blank" rel="noopener noreferrer">
+            <svg class="ar-btn-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.166 3C8.197 3 5 6.196 5 10.166c0 1.785.638 3.42 1.688 4.695-.117.378-.473 1.337-1.688 1.337v.001c0 .828.672 1.5 1.5 1.5.249 0 .483-.063.693-.17.53.82 1.317 1.417 2.307 1.417.356 0 .7-.085 1.024-.223C10.82 19.255 11.478 20 12.166 20s1.345-.745 1.642-1.277c.325.138.668.223 1.024.223.99 0 1.777-.597 2.307-1.417.21.107.444.17.693.17.828 0 1.5-.672 1.5-1.5v-.001c-1.215 0-1.571-.959-1.688-1.337C18.695 13.586 19.333 11.951 19.333 10.166 19.333 6.196 16.136 3 12.166 3z"/>
+            </svg>
+            Ouvrir sur Snapchat
+          </a>
+          <a class="ar-btn ar-insta" id="btnInsta" href="#" target="_blank" rel="noopener noreferrer">
+            <svg class="ar-btn-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+            Ouvrir sur Instagram
+          </a>
+        </div>
+        <p class="ar-hint">Pointez votre téléphone vers la porte après avoir lancé l'appli</p>
+      </div>
+
+      <!-- FRISE CHRONOLOGIQUE -->
+      <div class="timeline-block">
+        <p class="timeline-title">Les autres portes</p>
+        <div class="timeline-scroll-area">
+          <div class="timeline-track" id="timelineTrack"></div>
+        </div>
+      </div>
+
+      <!-- PIED DE PAGE -->
+      <footer class="app-footer">
+        <div class="footer-logo">
+          <span class="footer-100">100</span>
+          <div class="footer-text-block">
+            <span class="footer-foire">Foire d'Amiens</span>
+            <span class="footer-edition">100<sup>e</sup> édition · 2026</span>
+          </div>
+        </div>
+        <p class="footer-dates">Mi-avril — 5 juin 2026</p>
+        <a class="footer-site" href="https://foire-amiens.fr" target="_blank" rel="noopener">foire-amiens.fr</a>
+      </footer>
+
+    </article>
+  </main>
+
+  <!-- TOAST PARTAGE -->
+  <div class="toast" id="toast">Lien copié !</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
