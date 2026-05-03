@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/portail-qr", "destination": "/portail-qr/index.html" },
+    { "source": "/", "destination": "/portail-qr/index.html" }
+  ]
+}
